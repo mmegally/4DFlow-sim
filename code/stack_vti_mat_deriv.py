@@ -90,7 +90,7 @@ def compute_material_acceleration_for_directory(vti_dir, tr_ms, sr_cm):
 
 
 if __name__ == "__main__":
-    BASE_DIRECTORY = "/scratch/users/mmegally/healthy_U_bend/24-procs"
+    BASE_DIRECTORY = "VTI/folder/dir""
 
     # Processing all SR with TR 2 ms
     TR_TEST = 2
