@@ -6,7 +6,7 @@ import re
 
 from pressure_estimation import solve_pressure
 
-BASE_DIRECTORY = "CFD/data/dir"
+BASE_DIRECTORY = "VTI/folder/dir"
 RHO = 1060.0  # Blood density [kg/m^3]
 MU = 0.004  # Blood dynamic viscosity [Pa*s]
 ARRAY_NAME = 'Material_Acceleration_pre_vti'
