@@ -29,7 +29,7 @@ def compute_material_acceleration_vtu(vtu_dir):
     vtu_files.sort(key=extract_time)
     nt = len(vtu_files)
 
-    # Base dataset just to get number of points
+    # Base dataset to determine number of points:
     base_mesh = pv.read(vtu_files[0])
     n_points = base_mesh.n_points
     print(f"Found {nt} timeframes. Unstructured grid with {n_points} points.")
@@ -37,14 +37,14 @@ def compute_material_acceleration_vtu(vtu_dir):
     print("Computing material acceleration using native solver acceleration...")
     for i, filepath in enumerate(vtu_files):
 
-        # Load the mesh
+        # Load the mesh:
         mesh = pv.read(filepath)
 
         # Extract native Velocity and Acceleration:
         v = mesh.point_data['Velocity']
         eulerian_accel = mesh.point_data['Acceleration']
 
-        # Compute Spatial Gradient using mesh shape functions
+        # Compute Spatial Gradient using mesh shape functions:
         grad_mesh = mesh.compute_derivative(scalars='Velocity', gradient=True)
         G = grad_mesh.point_data['gradient']
 
@@ -72,8 +72,7 @@ def compute_material_acceleration_vtu(vtu_dir):
 
 
 if __name__ == "__main__":
-    # Update to your actual scratch directory path
-    BASE_DIRECTORY = "/scratch/users/mmegally/healthy_U_bend/24-procs"
+    BASE_DIRECTORY = "CFD/data/dir""
 
     compute_material_acceleration_vtu(
         vtu_dir=BASE_DIRECTORY
