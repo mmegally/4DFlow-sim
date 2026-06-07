@@ -112,7 +112,7 @@ def process_resolution_set(
 
 
 if __name__ == "__main__":
-    BASE_DIRECTORY = "/scratch/users/mmegally/healthy_U_bend/24-procs"
+    BASE_DIRECTORY = "CFD/data/dir"
 
     # Absolute available data bounds
     DATA_START = 3440
